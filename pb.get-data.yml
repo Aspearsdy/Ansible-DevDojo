@@ -1,0 +1,11 @@
+- name: "GET DATA FROM DEVICE"
+  hosts: "ceos"
+  connection: "network_cli"
+  tasks:
+    - name: "VALIDATE DEVICES ARE REACHABLE"
+      ansible.builtin.ping:
+      register: "ping"
+
+    - name: "VIEW OUTPUT OF PING"
+      ansible.builtin.debug:
+        var: "ping"
